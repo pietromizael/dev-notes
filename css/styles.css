@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+html,
+body {
+  background-color: #202124;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-input {
+  padding: 0.6rem;
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+  color: #ddd;
+  font-weight: bold;
+  background-color: #525356;
+}
+
+#search i {
+  font-size: 1.1rem;
+}
+
+#export-notes {
+  background-color: #333;
+  cursor: pointer;
+  border: 2px solid #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+#export-notes:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+#add-note-container input,
+#add-note-container button {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#note-content {
+  flex: 1;
+  background-color: transparent;
+  margin-right: 10px;
+  border: 1px solid #525356;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+#add-note {
+  background-color: #333;
+  border: 2px solid #000;
+  color: #fff;
+  height: 40px;
+  cursor: pointer;
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.note {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color: #202124;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+}
+
+.note textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  height: 100%;
+  color: #fff;
+  outline: none;
+}
+
+.fa-thumbtack {
+  background-color: transparent;
+  color: #fff;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fa-x,
+.fa-copy {
+  background-color: transparent;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.fa-copy {
+    top: 3rem;
+}
+
+.note:hover > i{
+  opacity: 0.5;
+}
+
+i.fa-x:hover,
+i.fa-copy:hover,
+i.fa-thumbtack:hover {
+    opacity: 1;
+}
+
+.note.fixed {
+    background-color: #32323a;
+}
+
+/* Responsividade */
+@media(max-width: 450px) {
+  #navbar {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  #add-note-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  #notes-container {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
